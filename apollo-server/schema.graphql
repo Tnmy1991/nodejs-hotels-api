@@ -1,0 +1,47 @@
+enum RoomType {
+  Delux
+  Single
+  Executive
+  Premium
+  Double
+}
+
+type Hotel {
+  id: ID!
+  name: String!
+  address: String!
+  rating: Float!
+  phone: String!
+  email: String!
+  country: String!
+  pincode: String!
+  latitude: Float!
+  longitude: Float!
+  checkIn: String!
+  checkOut: String!
+}
+
+type Tariff {
+  id: ID!
+  hotelId: Int!
+  roomType: RoomType!
+  tariff: Float
+}
+
+type Review {
+  id: ID!
+  hotelId: Int!
+  reviewer: String!
+  comments: String
+  rating: Float!
+}
+
+type Amenities {
+  id: ID!
+  hotelId: Int!
+  wifi: Boolean
+  roomService: Boolean
+  locker: Boolean
+  swimmingPool: Boolean
+  giftShops: Boolean
+}
