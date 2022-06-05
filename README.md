@@ -1,16 +1,20 @@
 ﻿# GraphQL Hotels API
- 
- This project was generated with [NodeJs](https://nodejs.org/en/) version 14.17.5.
- 
- ## Requirements
- 
- 1. [Apollo Server](https://www.apollographql.com/docs/apollo-server/) version 3.8.2
- 2. [express](http://expressjs.com/) version 4.18.1
- 3. [GraphQL](https://graphql.org/) version 16.5.0
+
+This project was generated with [NodeJs](https://nodejs.org/en/) version 14.17.5.
+
+## Requirements
+
+1.  [Apollo Server](https://www.apollographql.com/docs/apollo-server/) version 3.8.2
+2.  [express](http://expressjs.com/) version 4.18.1
+3.  [GraphQL](https://graphql.org/) version 16.5.0
+
+## Installation
+
+Run `npm i`, to install all the required dependencies.
 
 ## NodeJs Rest API
 
-In case, you need to access NodeJs Rest API based on Express, run `npm run rest-api`. The app will not automatically reload if you change any of the source files. 
+In case, you need to access NodeJs Rest API based on Express, run `npm run rest-api`. The app will not automatically reload if you change any of the source files.
 
 ### API Endpoints
 
@@ -21,7 +25,8 @@ In case, you need to access NodeJs Rest API based on Express, run `npm run rest-
 5. GET | http://localhost:3000/api/reviews/{hotelId} - Return reviews filter by hotelId
 6. GET | http://localhost:3000/api/amentities/{hotelId} - Return amentities filter by hotelId
 
-1. POST | http://localhost:3000/api/hotels - create new hotel
+7. POST | http://localhost:3000/api/hotels - create new hotel
+
 ```
    body: {
     id: string;
@@ -44,14 +49,15 @@ In case, you need to access NodeJs Rest API based on Express, run `npm run rest-
     giftShops: boolean;
   }
 ```
-  
+
 ## Apollo Server - GraphQL
 
-In case, you need to access GraphQL based on Apollo Server, run `npm run apollo-server`. The app will not automatically reload if you change any of the source files. 
+In case, you need to access GraphQL based on Apollo Server, run `npm run apollo-server`. The app will not automatically reload if you change any of the source files. Use `http://localhost:4000/` to access GraphQL Playground.
 
 ### Query
 
 1. Get all hotels including tariffs, reviews and amenities,
+
 ```
 query {
   hotels {
@@ -89,11 +95,12 @@ query {
       swimmingPool
       giftShops
     }
-  } 
+  }
 }
 ```
 
 2. Get hotel details including tariffs, reviews and amenities by providing hotelId,
+
 ```
 query {
   hotel(hotelId: $hotelId) {
@@ -136,6 +143,7 @@ query {
 ```
 
 3. Get hotel reviews by providing hotelId,
+
 ```
 query {
   reviews(hotelId: $hotelId) {
@@ -151,6 +159,7 @@ query {
 ### Mutation
 
 1. Create a hotel,
+
 ```
 mutation($data: CreateHotelInput!) {
   createHotel(data: {
